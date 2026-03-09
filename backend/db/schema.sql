@@ -1,7 +1,3 @@
--- Database Schema for Fakturera App
--- Run this in PostgreSQL after creating the database: fakturera_app
-
--- Users table for authentication
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     email VARCHAR(255) UNIQUE NOT NULL,
@@ -11,7 +7,6 @@ CREATE TABLE users (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Translations table for multi-language support (EN/SE)
 CREATE TABLE translations (
     id SERIAL PRIMARY KEY,
     key VARCHAR(255) NOT NULL,
@@ -21,23 +16,18 @@ CREATE TABLE translations (
     UNIQUE(key, lang)
 );
 
--- Products table for pricelist
-CREATE TABLE products (
-    id SERIAL PRIMARY KEY,
-    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-    product_number VARCHAR(50),
-    product_name VARCHAR(255) NOT NULL,
-    in_price DECIMAL(10, 2) DEFAULT 0,
-    price DECIMAL(10, 2) DEFAULT 0,
+CREATE TABLE pricelists (
+    article_no VARCHAR(20) PRIMARY KEY,
+    product_service VARCHAR(255) NOT NULL,
+    in_price DECIMAL(12, 2) DEFAULT 0,
+    price DECIMAL(12, 2) DEFAULT 0,
     unit VARCHAR(50) DEFAULT 'st',
-    in_stock DECIMAL(10, 2) DEFAULT 0,
+    in_stock DECIMAL(12, 2) DEFAULT 0,
     description TEXT,
-    supplier VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Index for faster queries
-CREATE INDEX idx_products_user_id ON products(user_id);
+CREATE INDEX idx_pricelists_article_no ON pricelists(article_no);
 CREATE INDEX idx_translations_lang ON translations(lang);
 CREATE INDEX idx_translations_key ON translations(key);
