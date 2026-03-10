@@ -1,7 +1,7 @@
 
 
 INSERT INTO users (email, password_hash, name) VALUES 
-('admin@example.com', '$2a$10$rQnM1v1xZg5Y5Y5Y5Y5Y5OvJ5F5F5F5F5F5F5F5F5F5F5F5F5F5F', 'Admin User');
+('admin@example.com', '$2b$10$BxlT8rZqgvMAeybiTf6fl.yvQGGZCv9Sst60Q2kPLgOOPEebwxqpm', 'John Andre');
 -- password = password123
 
 -- Swedish
