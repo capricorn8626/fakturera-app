@@ -15,13 +15,18 @@ INSERT INTO translations (key, lang, value) VALUES
 ('login.emailLabel', 'sv', 'Skriv in din epost adress'),
 ('login.passwordLabel', 'sv', 'Skriv in ditt lösenord'),
 ('login.register','sv','Registrera dig'),
-('login.error', 'sv', 'Vänligen skriv in en giltig epost adress'),
+('login.emailRequired', 'sv', 'Vänligen skriv in en giltig epost adress'),
+('login.passwordRequired', 'sv', 'Detta fält kan inte vara tomt'),
+('login.passwordMinLength', 'sv', 'Detta fält måste innehålla minst 4 tecken.'),
+('login.userNotExist', 'sv', 'Användaren finns inte'),
 -- Menu
 ('menu.home', 'sv', 'Hem'),
 ('menu.order', 'sv', 'Beställ'),
 ('menu.ourCustomers', 'sv', 'Våra Kunder'),
 ('menu.about', 'sv', 'Om oss'),
-('menu.contact', 'sv', 'Kontakta oss');
+('menu.contact', 'sv', 'Kontakta oss'),
+('menu.language', 'sv', 'Svenska'),
+('menu.flag', 'sv', 'https://storage.123fakturere.no/public/flags/SE.png');
 
 -- English
 
@@ -35,13 +40,18 @@ INSERT INTO translations (key, lang, value) VALUES
 ('login.emailLabel', 'en', 'Enter your email address'),
 ('login.passwordLabel', 'en', 'Enter your password'),
 ('login.register','en','Register'),
-('login.error', 'en', 'Please enter a valid email address'),
+('login.emailRequired', 'en', 'Please enter a valid email address'),
+('login.passwordRequired', 'en', 'This field cannot be empty'),
+('login.passwordMinLength', 'en', 'This field must be at least 4 characters long.'),
+('login.userNotExist', 'en', 'The user does not exist'),
 -- Menu
 ('menu.home', 'en', 'Home'),
 ('menu.order', 'en', 'Order'),
 ('menu.ourCustomers', 'en', 'Our Customers'),
 ('menu.about', 'en', 'About us'),
-('menu.contact', 'en', 'Contact Us');
+('menu.contact', 'en', 'Contact Us'),
+('menu.language', 'en', 'English'),
+('menu.flag', 'en', 'https://storage.123fakturere.no/public/flags/GB.png');
 
 INSERT INTO pricelists (article_no, product_service, in_price, price, unit, in_stock, description) VALUES
 ('1234567890', 'Office Chair Deluxe', 150.00, 299.00, 'st', 25, 'Ergonomic office chair with lumbar support'),
